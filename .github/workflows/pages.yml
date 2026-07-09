@@ -1,0 +1,18 @@
+name: Map
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  pages:
+    uses: Delwing/mudlet-map-page/.github/workflows/deploy-pages.yml@v1
+    with:
+      map-file: maps/map.dat
+      title: My MUD Map
